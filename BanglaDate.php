@@ -1,5 +1,5 @@
 <?php
-
+//source https://phpans.com/bangla-date-and-time-in-php/
 class BanglaDate
 {
     private $timestamp;
@@ -11,7 +11,7 @@ class BanglaDate
     private $bangDate;
     private $bangMonth;
     private $bangYear;
-    private $bn_months = array("বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র");
+    private $bn_months = array("পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র", "বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ");
     private $bn_month_dates = array(30, 30, 30, 30, 31, 31, 31, 31, 31, 30, 30, 30);
     private $bn_month_middate = array(13, 12, 14, 13, 14, 14, 15, 15, 15, 15, 14, 14);
     private $lipyearindex = 3;
