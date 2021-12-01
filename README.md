@@ -1,5 +1,7 @@
 ### output will be like this 
 
+!(/output.PNG "output")
+
 Time converted into Bangla : ০৭ টা ৩৮ মিনিট ০৯ সেকেন্ড
 
 বাংলা তারিখ : ১৬ অগ্রহায়ণ ১৪২৮
