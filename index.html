@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head> 
+	<title>Bangla Date and Time</title>
+	<style type="text/css" media="screen">
+	#myId{
+		background: black;
+		color: #b2d9dfe0;
+		text-align: center;
+		padding: 50px;
+		font-size: 25px;
+		}
+	</style>
+	
+</head>
+
+<body id="myId">
+	<span>
+		<b>
+		Time converted into Bangla : 
+	   </b>
+	</span> 
+<span id='hrNow'> </span><span>  টা </span>
+<span id='minuteNow'></span><span>  মিনিট </span>
+ <span id='secondNow'></span><span>  সেকেন্ড  </span> 
+
+ <br><br>
+
+<?php
+  include 'phpDate.php'
+ ?>
+
+
+  <script>
+				     (function myTime(){
+				        var d = new Date();
+				        //get hour with leading zero
+				         var hours = (d.getHours('hh') + 24) % 12 || 12;
+				         var arrayOfDigits = String(hours);
+				         getTime(hours,arrayOfDigits,'hrNow')
+				         //get minute with leading zero
+				         const getMinute = d.getMinutes('mm');
+				         var arrayOfDigits = String(getMinute);
+				         getTime(getMinute,arrayOfDigits,'minuteNow')
+
+  							//get every second with leading zero
+				         const getSec = d.getSeconds('ss');
+				         var arrayOfDigits = String(getSec);
+				         getTime(getSec,arrayOfDigits,'secondNow')
+
+
+				        setTimeout(myTime, 1000); // refresh time every 1 second
+				    })();
+				     function getTime(name,arrayOfDigits,id) {
+				         var engDigit = ['1','2','3','4','5','6','7','8','9','0'];
+				         var bangDigit = ['১','২','৩','৪','৫','৬','৭','৮','৯','০'];
+				         var store = String();
+
+				         if(name >= '01' && name <= '09'){
+				             var store = '০';
+				             for(var j= 0 ; j< arrayOfDigits.length ; j++) {
+				                 for (var i = 0; i < engDigit.length; i++) {
+				                     if (arrayOfDigits[j] == engDigit[i]) {
+				                         store += bangDigit[i];
+				                     }
+				                 }
+				             }
+				             document.getElementById(id).innerHTML = store    ;
+				         }else{
+				             for(var j= 0 ; j< arrayOfDigits.length ; j++) {
+				                 for (var i = 0; i < engDigit.length; i++) {
+				                     if (arrayOfDigits[j] == engDigit[i]) {
+				                         store += bangDigit[i];
+				                     }
+				                 }
+				             }
+				             document.getElementById(id).innerHTML = store  ;
+				         }
+				     }
+				</script>
+</body>
+</html>
