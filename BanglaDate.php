@@ -43,7 +43,7 @@ class BanglaDate
 
     private function calculate_date()
     {
-        $this->bangDate = $this->engDate - $this->bn_month_middate[$this->engMonth - 1];
+        $this->bangDate = $this->engDate - $this->bn_month_middate[$this->engMonth - 1]-1;
         if ($this->engHour < $this->morning)
             $this->bangDate -= 1;
 
